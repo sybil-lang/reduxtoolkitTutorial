@@ -3,6 +3,9 @@ import { createSlice } from '@reduxjs/toolkit'
 const userSlice = createSlice({
   name: 'user',
   initialState:[],
+
+  //ye redicer h jaha ham hamne micro redicer likheneg
+  
   reducers: {
     addUser(state,action){
       state.push(action.payload)
@@ -16,16 +19,12 @@ const userSlice = createSlice({
        return [];
     },
   },
-  extraReducers(builder){
-    builder.addCase(userSlice.actions.deleteUser,()=>{
-      return[];
-    })
-  }
+   
 })
+console.log(userSlice.actions )
 /*
 if action is supposed to be handled by one reducer,user reducers
 if action is supposed to be handled by multiple reducer,user extraReducers
 */
-console.log(userSlice.actions )
 export default userSlice.reducer;
 export const {addUser, removeUser, deleteUser} =userSlice.actions; 
